@@ -77,22 +77,6 @@ transition-property:  color;
 transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hand_nav{
-position: absolute;
-bottom: 18px;
-left: 35px;
-fill: var(--second-color);
-opacity: 0;
-
-transition-property: opacity;
-transition-duration: 250ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-}
-.nav_link:hover .hand_nav,
-.nav_link:focus .hand_nav{
-opacity: 1;
-
-}
 .current{
     color: var(--logo-color);
     position: relative;
@@ -156,18 +140,7 @@ transition-property:  color;
 transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
     }
-    .hand_tel{
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    opacity: 0;
-    fill: var(--second-color);
-    }
-    .contact_link:hover .hand_tel,
-    .contact_link:focus .hand_tel{
-        opacity: 1;
-    }
-  
+     
 .section{
 margin-top: 0;
 margin-bottom: 0;
@@ -234,7 +207,9 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.2); 
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     .backdrop.is-hidden{
     opacity: 0;
@@ -246,6 +221,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     background-color: var(--background-head);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    padding: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -253,9 +229,12 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     align-items: flex-start;
     display: block;
     justify-content: flex-end;
+    transition-property: translate, scale;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     .backdrop.is-hidden .modal{
-        transform: scale(0.5) translate(-50%, -50%)
+        transform: scale(0.7) translate(-50%, -50%)
     }
     .button_close{
     display: flex;
@@ -265,13 +244,13 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 8px;
+    right: 8px;
     background: var(--address-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     box-sizing: border-box;
-    
+    cursor: pointer;
     }
     .close_icon{
     position: absolute;
@@ -279,27 +258,11 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
     }
-    .close_icon:hover,
-    .close_icon:focus {
+    .button_close:hover .close_icon,
+    .button_close:focus .close_icon {
     fill: #2196F3;
         }
-    .close_hand{
-    position: absolute;
-    transform: translateY(100%);
-    opacity: 0;
-    fill: var(--second-color);
-    transition-property: opacity;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-}
-    .button_close:hover .close_hand,
-    .button_close:focus .close_hand{
-        opacity: 1;
-    }
-    .form{
- margin: 40px;
-
-    }
+ 
     .survey{
     display: block;
     font-weight: bold;
@@ -308,41 +271,37 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--second-color); 
-    margin-top: 40px;  
-    margin-bottom: 12px;  
+    margin-bottom: 12px; 
+    
     }
     .form_survey{
     display: block;
     text-align: start;
     position: relative;
     margin-bottom: 10px;
+    font-size: 12px;
     transition-property: fill, border;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
     }
-    .form_survey:focus-within>.icon{
+    .form_survey:focus-within>.icon,
+    .form_survey:hover>.icon{
         fill: var(--logo-color);
     }
-    .form_survey:focus-within>.form_name{
-        border: 1px solid var(--logo-color);   
-    }
-    .hand1{
-    position: absolute;
-    top: 50px;
-    left: 30px;
-    opacity: 0;
-    fill: var(--second-color);
-    }
-    .form_survey:focus-within> .hand1
-     {
-        opacity: 1;
-    }
+   
+    .form_survey:focus-within>.form_input, 
+    .form_survey:hover>.form_input {
+        border: 1px solid var(--logo-color); } 
+
     .icon{
     fill: #212121;
     position: absolute;
     bottom: 0;
     left: 0;
     transform: translate(15px, -14px);
+    }
+    .form_comment{
+        margin-bottom: 20px;
     }
      .comment{
     width: 100%;
@@ -351,7 +310,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
     border-radius: 4px;
-    margin-bottom: 20px;
+    
      } 
      .comment:placeholder{
         font-weight: normal;
@@ -367,7 +326,8 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     padding-left: 35px; 
     border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
-    border-radius: 4px;  
+    border-radius: 4px; 
+    cursor: pointer; 
     }
     .form_lable{
     font-weight: normal;
@@ -376,15 +336,27 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 0.01em;
     color: #757575;
     }
+    .check{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+            }
    .check_form{
+       width: 16px;
+       height: 15px;
+       margin-right: 7px;
        appearance: none;
+       overflow: hidden;
+       clip: rect(0 0 0);
           }
     .check_text{
     position: relative; 
     display: block;
     font-size: 14px;
     line-height: 1.71;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
     color: #757575;
 }
 .form_conditions{
@@ -393,41 +365,56 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 0.01em;
     color: var(--logo-color);   
 }
-   .check_icon{
-    display: block;
-    width: 16px;
-    height: 15px;
-    fill:#212121 ;
-    position: absolute;
-    top: 445px;
-    left: 45px;
-    border-radius: 2px;
-    transition-property: border-color, background-image;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-    
-   }
+   .check_icon {
+        display: block;
+        width: 16px;
+        height: 15px;
+        position: absolute;
+        bottom: 2px;
+        left: 7px;
+        transform: translate(-25%, -25%);
+        border: 1px solid #212121;
+        border-radius: 2px;
+        pointer-events: none;
+        transition-property: background-image;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)}
+
    .check_form:checked + .check_icon{
     content: "";
-    display: block;
     background-image: url(../image/icon_check.svg);
-    width: 16px;
-    height: 15px;
-    position: absolute;
-    top: 445px;
-    left: 45px;
     background-size: contain;
     background-origin: border-box;
     border-color: #2196F3;
     border-radius: 2px;
+    pointer-events: none;
    }
+ 
+   .check_form:focus + .check_icon{
+    content: "";
+    background-image: url(../image/icon_check.svg);
+    background-size: contain;
+    background-origin: border-box;
+    border-color: hsl(207, 90%, 54%);
+    border-radius: 2px;
+   }
+   .check_form:disabled + .check_icon{
+    content: "";
+    background-image: url(../image/icon_check.svg);
+    background-size: contain;
+    background-origin: border-box;
+    border-color: hsl(207, 90%, 54%);
+    border-radius: 2px;}
+
    .button_form{
     width: 200px;
     height: 50px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30px;
     background: #2196F3;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: 0;
     border-radius: 4px;
     color: var(--address-color);
     font-weight: bold;
@@ -437,32 +424,18 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     letter-spacing: 0.06em;
     position: relative;
+    cursor: pointer;
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
    }
-   .hand_button{
-position: absolute;
-top: 45px;
-opacity: 0;
-fill: var(--second-color);
-transition-property: opacity;
-transition-duration: 250ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-
-
-   }
+  
    .button_form:hover,
    .button_form:focus,
    .button_form:active{
     background-color: #188CE8;
    }
-   .button_form:hover .hand_button,
-   .button_form:focus .hand_button,
-   .button_form:active .hand_button{
-       opacity: 1;
-   }
-    
+      
 .peculiarities{
 padding-bottom: 47px;
 }
@@ -636,20 +609,6 @@ margin-bottom: 0;
     fill: var(--logo-color);
     
 }
-.hand_client{
-position: absolute;
-bottom: 0;
-right: 50px;
-fill: var(--second-color);
-opacity: 0;
-transition-property: opacity;
-transition-duration: 250ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-}
-.client_link:hover .hand_client,
-.client_link:focus .hand_client{
-    opacity: 1;
-}
 
 .social_list{
 list-style-type: none;
@@ -689,20 +648,6 @@ transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hand_item{
-position: absolute;
-bottom: -5px;
-right: 0;
-fill: var(--second-color);
-opacity: 0;
-transition-property: opacity;
-transition-duration: 250ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
-}
-.social_link:hover .hand_item,
-.social_link:focus .hand_item{
-opacity: 1;
-}
 .client_link{
 display: flex;
 flex-direction: column;
@@ -808,7 +753,7 @@ margin-top: 0;
 }
 .footer_form{
     margin: 0;
-    margin-left: 93px;
+    margin-left: auto;
 }
 .form_title{
     font-weight: bold;
@@ -821,41 +766,51 @@ margin-top: 0;
 .footer_meaning{
 margin: 0;
 margin-top: 20px;
+display: flex;
 }
 .footer_input{
 width: 358px;
 height: 50px;
+background-color: transparent;
 border: 1px solid rgba(255, 255, 255, 0.3);
 box-sizing: border-box;
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 border-radius: 4px;
 margin-right: 12px;
+padding-left: 16px;
+padding-top: 15px;
+padding-bottom: 15px;
+color: rgba(255, 255, 255, 0.6); 
+
+
 }
 .footer_input::placeholder{
 font-size: 16px;
 line-height: 1.25;
 letter-spacing: 0.03em;
-padding-left: 23px;
+
 }
 .footer_button{
+display: flex;
 width: 200px;
 height: 50px;
 background-color: var(--logo-color);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 border-radius: 4px;
+border: 0;
 font-weight: bold;
 font-size: 16px;
 line-height: 1.87;
-text-align: start;
+text-align: center;
+justify-content: center;
+align-items: center;
 padding-left: 29px;
 letter-spacing: 0.06em;
 color: var(--address-color);
-position: relative;
+
 }
 .button_icon_send{
-position: absolute; 
-right: 23px;
-top: 13px;
+margin-left: 10px;
 }
 
 
@@ -902,21 +857,8 @@ background-color: var(--logo-color);
 cursor: pointer;
 box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 border-radius: 4px;
+}
 
-}
-.hand_all{
-position: absolute;
-bottom: -15px;
-fill: var(--second-color);
-opacity: 0;
-transition-property: opacity;
-transition-duration: 250ms;
-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.filter_button:hover .hand_all,
-.filter_button:focus .hand_all{
-    opacity: 1;
-}
 .all {
     background-color: var(--logo-color);
     color: var(--address-color);
@@ -951,20 +893,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 250ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
         position: relative;    
-    }
-    .hand_project{
-    position: absolute;
-    fill: var(--second-color);
-    bottom: 50px;
-    right: 120px;
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .project_link:hover .hand_project,
-    .project_link:focus .hand_project{
-        opacity: 1;
     }
     .project_item:hover, .project_item:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -1066,5 +994,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     .project_link:focus ::before,
     .project_link:active ::before{
      opacity: 1;
-     transform: translateY(0);}
+     transform: translateY(0);
+    }
 
