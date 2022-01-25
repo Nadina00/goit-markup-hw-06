@@ -280,7 +280,6 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     text-align: start;
     position: relative;
     margin-bottom: 10px;
-    font-size: 12px;
     transition-property: fill, border;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
@@ -335,6 +334,7 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.01em;
+    margin-right: 4px;
     color: #757575;
     }
 
@@ -346,19 +346,20 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
             }
    .check_form{
-       width: 16px;
-       height: 15px;
-       margin-right: 2px;
+       width: 10px;
+       height: 10px;
+       margin-right: 3px;
        appearance: none;
+       position: relative;
        overflow: hidden;
        clip: rect(0 0 0);
           }
     .check_text{
     position: relative; 
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.71;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.03em;
     color: #757575;
 }
 .form_conditions{
@@ -372,8 +373,8 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         width: 16px;
         height: 15px;
         position: absolute;
-        bottom: 2px;
-        left: 7px;
+        bottom: 1px;
+        left: 0px;
         transform: translate(-25%, -25%);
         border: 1px solid #212121;
         border-radius: 2px;
