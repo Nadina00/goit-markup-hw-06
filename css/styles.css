@@ -393,14 +393,13 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
    }
  
-   .check_form:focus + .check_icon{
-    content: "";
-    background-image: url(../image/icon_check.svg);
+   .check_form:focus-within + .check_icon{
     background-size: contain;
     background-origin: border-box;
     border-color: hsl(207, 90%, 54%);
     border-radius: 2px;
    }
+   
    .check_form:disabled + .check_icon{
     content: "";
     background-image: url(../image/icon_check.svg);
@@ -597,6 +596,9 @@ margin-bottom: 0;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
+    .client_item:last-child{
+        margin-right: 0;}
+
 .client_item:hover,
 .client_item:focus{
     border: 1px solid var(--logo-color);
